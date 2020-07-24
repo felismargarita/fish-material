@@ -1,5 +1,11 @@
 //config
 @import "variables";
 
+//reboot
+@import "./reboot";
+
 //button
-@import "../components/button/style"
+@import "../components/button/style";
+
+//collapse
+@import "../components/collapse/style";

@@ -1,3 +1,5 @@
+$base-size:16px !default;
+
 $white:    #fff !default;
 $black:    #000 !default;
 //灰阶
@@ -48,7 +50,8 @@ $font-size-base:              16px !default; // Assumes the browser default, typ
 $font-size-lg:                $font-size-base * 1.25 !default;
 $font-size-sm:                $font-size-base * .875 !default;
 $font-size-root:              null !default;
-
+$small-font-size:             $font-size-base*0.875 !default;
+$sub-sup-font-size:           $font-size-base*0.75 !default;
 // body
 $body-bg:                   $white !default;
 $body-color:                $gray-900 !default;
@@ -82,3 +85,50 @@ $border-color:                $gray-300 !default;
 $border-radius:               2px       !default;
 $border-radius-lg:            4px       !default;
 $border-radius-sm:            1px       !default;
+
+// Spacing
+$spacer: 16px !default;
+$headings-margin-bottom:      $spacer / 2 !default;
+$headings-font-family:        null !default;
+$headings-font-style:         null !default;
+$headings-font-weight:        500 !default;
+$headings-line-height:        1.2 !default;
+$headings-color:              null !default;
+
+$hr-margin-y:                 $spacer !default;
+$hr-color:                    inherit !default;
+$hr-height:                   1px !default;
+$hr-opacity:                  .25 !default;
+
+// Paragraphs
+
+$paragraph-margin-bottom:   1rem !default;
+
+
+$dt-font-weight:              $font-weight-bold !default;
+
+
+// 链接
+$link-color:                              $primary !default;
+$link-decoration:                         none !default;
+$link-hover-color:                        darken($link-color, 15%) !default;
+$link-hover-decoration:                   underline !default;
+
+
+// Code
+$code-font-size:                    $small-font-size !default;
+$code-color:                        $pink !default;
+$pre-color:                         null !default;
+
+$text-muted:                  $gray-600 !default;
+
+// options 可配置选项
+$enable-pointer-cursor-for-buttons:           true !default;
+
+$legend-margin-bottom:        .5*$base-size !default;
+$legend-font-size:            1.5*$base-size !default;
+$legend-font-weight:          null !default;
+
+
+$mark-padding:                .2*$base-size !default;
+$mark-bg:                     #fcf8e3 !default;

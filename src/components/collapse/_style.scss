@@ -1,0 +1,30 @@
+.microvast-collapse-pannel-bar{
+  background: $gray-300;
+  border: $border-width solid $gray-500;
+  height: 40px;
+  line-height: 40px;
+  text-align: left;
+  cursor: pointer;
+}
+
+$pannel-height: 200px !default;
+
+@mixin microvast-collapse-pannel-conetent($pannel-max-height) {
+  max-height: $pannel-max-height;
+  overflow-y: hidden;
+  transition: all,0.3s;
+  text-align: left;
+  border:$border-width solid $gray-300 ;
+}
+
+.microvast-collapse-pannel-conetent-open{
+  @include microvast-collapse-pannel-conetent($pannel-height);
+  opacity: 1;
+  height:$pannel-height ;
+}
+
+.microvast-collapse-pannel-conetent-close{
+  @include microvast-collapse-pannel-conetent($pannel-height);
+  opacity: 0;
+  height:0;
+}
