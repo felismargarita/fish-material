@@ -1,0 +1,85 @@
+$btn-line-height: 0.8*$line-height-base !default;
+$btn-font-weight:             400 !default;
+$btn-padding-y:               4px !default;
+$btn-padding-x:               10px !default;
+$btn-font-family:             $font-family-base !default;
+$btn-font-size:               $font-size-base !default;
+$btn-line-height:             $line-height-base !default;
+$btn-disabled-opacity: 0.6 !default;
+
+@mixin button-size($padding-x,$padding-y,$font-size,$border-radius){
+  padding: $padding-y $padding-x;
+  border-radius: $border-radius;
+  font-size:$font-size;
+}
+
+@mixin button-style(
+  $color,
+  $border-color,
+  $background,
+  $hover-color:$color,
+  $hover-border-color:lighten($border-color,10%),
+  $hover-background:lighten($background,10%),
+  ){
+    color: $color;
+    border-color: $border-color;
+    background: $background;
+    &.focus,&:focus{
+      color: $hover-color;
+      border-color: $hover-border-color;
+      background: $hover-background;
+    }
+    &.hover,&:hover{
+      color: $hover-color;
+      border-color: $hover-border-color;
+      background: $hover-background;
+    }
+    &.disabled,&:disabled{
+      color: $color;
+      border-color: $border-color;
+      background: $background;
+      cursor: not-allowed;
+      box-shadow: none;
+      opacity: $btn-disabled-opacity;
+      > * {
+        pointer-events: none;
+      }
+    }
+    
+}
+
+.fish-btn{
+  display: inline;
+  white-space: nowrap;
+  font-weight: $btn-font-weight;
+  text-align: center;
+  color:$body-color;
+  line-height: $btn-line-height;
+  background-color:#fff;
+  border: $border-width solid $gray-500;
+  outline: none;
+  cursor: pointer;
+  @include button-size($btn-padding-x,$btn-padding-y,$btn-font-size,$border-radius);
+  transition: all 0.4s;
+  &:hover,&.hover{
+    color: $primary;
+    border-color: $primary;
+  }
+  &:focus,&.focus{
+    color: $primary;
+    border-color: $primary;
+  }
+}
+.fish-btn-small{
+@include button-size($btn-padding-x*0.75,$btn-padding-y*0.75,$btn-font-size*0.75,$border-radius)
+}
+.fish-btn-large{
+  @include button-size($btn-padding-x*1.25,$btn-padding-y*1.25,$btn-font-size*1.25,$border-radius)
+}
+
+.fish-btn-danger{
+  @include button-style(#fff,$danger,$danger)
+}
+.fish-btn-primary{
+  @include button-style(#fff,$primary,$primary)
+}
