@@ -1,0 +1,72 @@
+//notification
+
+$vertical-shift : 16px !default;
+$horizontal-shift: 32px !default;
+$notification-border-radius : 8px !default;
+$notification-min-height: 120px !default;
+$notification-width: 400px !default;
+
+@mixin notification-show(
+  $position,
+  $width,
+  $min-height,
+  $border-radius
+) {
+  position: $position,;
+  width: $width;
+  min-height: $min-height;
+  background-color: $gray-200;
+  border-radius: $border-radius;
+}
+
+.notification-show-position-top-right {
+  @include notification-show(fixed,$notification-width,$notification-min-height,$notification-border-radius);
+  top:$vertical-shift;
+  right: $horizontal-shift;
+  transition: right 0.5s;
+}
+
+.notification-hidden-position-top-right {
+  @include notification-show(fixed,$notification-width,$notification-min-height,$notification-border-radius);
+  top:$vertical-shift;
+  right: - $horizontal-shift - $notification-width;
+  transition: right 0.5s;
+}
+
+.notification-show-position-bottom-right {
+  @include notification-show(fixed,$notification-width,$notification-min-height,$notification-border-radius);
+  bottom:$vertical-shift;
+  right: $horizontal-shift;
+  transition: right 0.5s;
+}
+
+.notification-hidden-position-bottom-right {
+  @include notification-show(fixed,$notification-width,$notification-min-height,$notification-border-radius);
+  bottom:$vertical-shift;
+  right: - $horizontal-shift - $notification-width;
+  transition: right 0.5s;
+}
+
+
+
+
+.notification-close{
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  cursor: pointer;
+}
+.notification-title{
+  text-align: left;
+  padding-left: 16px;
+  font-size: 20px;
+  padding-right: 32px;
+  min-height: 32px;
+  line-height: 32px;
+}
+.notification-content{
+  text-align: left;
+  padding-left: 16px;
+}
